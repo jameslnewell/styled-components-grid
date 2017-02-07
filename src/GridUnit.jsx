@@ -33,7 +33,7 @@ const visibilityMixin = ({visible}) => {
   if (visible) {
     return ``;
   } else {
-    return `display: none`;
+    return `display: none`; //TODO: support breakpoints
   }
 };
 

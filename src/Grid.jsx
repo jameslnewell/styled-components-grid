@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const flexWrap = wrap => wrap && 'wrap' || 'nowrap';
-const flexDirection = reverse => reverse && 'row-reverse' || 'row';
+const flexWrap = wrap => wrap && 'wrap' || 'nowrap'; //TODO: support breakpoints
+const flexDirection = reverse => reverse && 'row-reverse' || 'row'; //TODO: support breakpoints
 
-const justifyContent = (alignment, reverse) => {
+const justifyContent = (alignment, reverse) => { //TODO: support breakpoints
   switch (alignment) {
 
     default:
@@ -34,7 +34,7 @@ const justifyContent = (alignment, reverse) => {
   }
 };
 
-const alignItems = (alignment) => {
+const alignItems = (alignment) => { //TODO: support breakpoints
   switch (alignment) {
 
     case 'top':
