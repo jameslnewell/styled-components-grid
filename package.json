@@ -1,0 +1,32 @@
+{
+  "name": "styled-components-grid",
+  "version": "1.0.0-preview.1",
+  "description": "Responsive grid components for `styled-components`.",
+  "keywords": [
+    "react",
+    "styled-components",
+    "grid",
+    "responsive",
+    "style"
+  ],
+  "repository": "jameslnewell/styled-components-grid",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "styled-components": "^1 || ^2.0.0-1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && mkdir -p ./dist && babel ./src --out-dir ./dist",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "styled-components-breakpoint": "^1.0.0-preview.2"
+  }
+}
