@@ -1,71 +1,86 @@
 import React from 'react';
 import styled from 'styled-components';
+import {map} from 'styled-components-breakpoint';
 
-const flexWrap = wrap => wrap && 'wrap' || 'nowrap'; //TODO: support breakpoints
-const flexDirection = reverse => reverse && 'row-reverse' || 'row'; //TODO: support breakpoints
+const wrapMixin = ({wrap, theme}) => map(wrap, w => `flex-wrap: ${w && 'wrap' || 'nowrap'};`, theme.breakpoints);
 
-const justifyContent = (alignment, reverse) => { //TODO: support breakpoints
+const flexDirectionMixin = ({reverse, theme}) => map(reverse, r => `flex-direction: ${r && 'row-reverse' || 'row'};`, theme.breakpoints);
+
+const justifyContentMixin = ({horizontalAlign, reverse, theme}) => map(horizontalAlign, alignment => {
+  let rule = '';
   switch (alignment) {
 
     default:
     case 'left':
       if (reverse) {
-        return 'flex-end';
+        rule = 'flex-end';
       } else {
-        return 'flex-start';
+        rule = 'flex-start';
       }
+      break;
 
     case 'right':
       if (reverse) {
-        return 'flex-start';
+        rule = 'flex-start';
       } else {
-        return 'flex-end';
+        rule = 'flex-end';
       }
+      break;
 
     case 'center':
-      return 'center';
+      rule = 'center';
+      break;
 
     case 'justify-center':
-      return 'space-around';
+      rule = 'space-around';
+      break;
 
     case 'justify':
-      return 'space-between';
+      rule = 'space-between';
+      break;
 
   }
-};
+  return `justify-content: ${rule};`
+}, theme.breakpoints);
 
-const alignItems = (alignment) => { //TODO: support breakpoints
+const alignItemsMixin = ({verticalAlign, theme}) => map(verticalAlign, alignment => {
+  let rule = '';
   switch (alignment) {
 
     case 'top':
-      return 'flex-start';
+      rule = 'flex-start';
+      break;
 
     case 'bottom':
-      return 'flex-end';
+      rule = 'flex-end';
+      break;
 
     case 'center':
-      return 'center';
+      rule = 'center';
+      break;
 
     default:
     case 'stretch':
-      return 'stretch';
+      rule = 'stretch';
+      break;
 
   }
-};
+  return `align-items: ${rule};`
+}, theme.breakpoints);
 
 const Grid = styled.div`
   display: flex;
-  flex-wrap: ${({wrap}) => flexWrap(wrap)};
-  flex-direction: ${({reverse}) => flexDirection(reverse)};
-  justify-content: ${({horizontalAlign, reverse}) => justifyContent(horizontalAlign, reverse)};
-  align-items: ${({verticalAlign}) => alignItems(verticalAlign)};
+  ${wrapMixin}
+  ${flexDirectionMixin}
+  ${justifyContentMixin}
+  ${alignItemsMixin}
 `;
 
 Grid.propTypes = {
-  wrap: React.PropTypes.bool,
-  reverse: React.PropTypes.bool,
-  horizontalAlign: React.PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']),
-  verticalAlign: React.PropTypes.oneOf(['top', 'bototm', 'center', 'stretch']),
+  wrap: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object]),
+  reverse: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object]),
+  horizontalAlign: React.PropTypes.oneOfType([React.PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), React.PropTypes.object]),
+  verticalAlign: React.PropTypes.oneOfType([React.PropTypes.oneOf(['top', 'bototm', 'center', 'stretch']), React.PropTypes.object])
 };
 
 Grid.defaultProps = {

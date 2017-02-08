@@ -1,41 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+import {map} from 'styled-components-breakpoint';
 
 //TODO: fix issues with partial pixels
 
-const widthMixin = ({width, theme}) => {
+const widthMixin = ({width, theme}) => map(width, w => {
+  const pct = Math.round(w * 100); //TODO: support "min" and "max"
+  return `
+    flex-basis: ${pct}%;
+    max-width: ${pct}%;
+  `;
+}, theme.breakpoints);
 
-  if (width) {
-    if (typeof width === 'object') {
-      return Object.keys(width)
-        .map(name => {
-          const pct = Math.round(width[name] * 100); //TODO: support "min" and "max"
-          return breakpoint(name, theme.breakpoints)`
-            flex-basis: ${pct}%;
-            max-width: ${pct}%;
-          `;
-        })
-        ;
-    } else {
-      const pct = Math.round(width * 100); //TODO: support "min" and "max"
-      return `
-        flex-basis: ${pct}%
-        max-wdith: ${pct}%
-      `;
-    }
-  }
-
-  return null;
-};
-
-const visibilityMixin = ({visible}) => {
-  if (visible) {
-    return ``;
+const visibilityMixin = ({visible, theme}) => map(visible, v => {
+  if (v) {
+    return 'display: inline-block;'; //TODO: maybe this shouldn't be inline block??
   } else {
-    return `display: none`; //TODO: support breakpoints
+    return 'display: none;';
   }
-};
+}, theme.breakpoints);
 
 const GridUnit = styled.div`
   box-sizing: border-box;
@@ -45,7 +28,7 @@ const GridUnit = styled.div`
 
 GridUnit.propTypes = {
   width: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.object]),
-  visible: React.PropTypes.bool
+  visible: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object])
 };
 
 GridUnit.defaultProps = {
