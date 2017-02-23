@@ -1,6 +1,6 @@
 # styled-components-grid
 
-Responsive grid components for `styled-components`.
+A responsive grid components for `styled-components`.
 
 ## Installation
 
