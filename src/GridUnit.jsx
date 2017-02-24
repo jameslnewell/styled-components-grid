@@ -20,7 +20,7 @@ const visibilityMixin = ({visible, theme}) => map(visible, v => {
   }
 }, theme.breakpoints);
 
-const OmitWidth = ({width, ...otherProps}) => <div {...otherProps}/>;
+const OmitWidth = ({width, visible, ...otherProps}) => <div {...otherProps}/>;
 
 const GridUnit = styled(OmitWidth)`
   box-sizing: border-box;
