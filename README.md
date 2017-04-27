@@ -69,6 +69,13 @@ Reverse the order of the grid units.
 
 A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `false`.
 
+### wrap
+
+Whether the grid units should wrap across multiple lines or a single line.
+
+A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `false`.
+
+
 ### &lt;Grid.Unit/&gt;
 
 #### width
@@ -84,6 +91,11 @@ Controls whether the grid unit is visible.
 A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `true`.
 
 ## Change log
+
+### 1.0.0-preview.7
+
+- added: `min` and `max` widths to `Grid.Unit`
+- added: docs for `wrap` to `Grid`
 
 ### 1.0.0-preview.6
 

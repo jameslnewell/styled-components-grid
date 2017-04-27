@@ -6,11 +6,32 @@ import {map} from 'styled-components-breakpoint';
 //TODO: fix issues with partial pixels
 
 const widthMixin = ({width, theme}) => map(width, w => {
-  const pct = Math.round(w * 100); //TODO: support "min" and "max"
-  return `
-    flex-basis: ${pct}%;
-    max-width: ${pct}%;
-  `;
+  switch (w) {
+
+    case 'min':
+      return `
+        flex-grow: 0;
+        flex-basis: auto;
+        width: auto;
+        max-width: none;
+      `;
+
+    case 'max':
+      return `
+        flex-grow: 1;
+        flex-basis: auto;
+        width: auto;
+        max-width: none;
+      `;
+
+    default:
+      const pct = Math.round(w * 100);
+      return `
+        flex-basis: ${pct}%;
+        max-width: ${pct}%;
+      `;
+
+  }
 }, theme.breakpoints);
 
 const visibilityMixin = ({visible, theme}) => map(visible, v => {
@@ -30,7 +51,7 @@ const GridUnit = styled(OmitWidth)`
 `;
 
 GridUnit.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
   visible: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
 };
 
