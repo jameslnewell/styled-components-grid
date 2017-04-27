@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {map} from 'styled-components-breakpoint';
 
@@ -29,8 +30,8 @@ const GridUnit = styled(OmitWidth)`
 `;
 
 GridUnit.propTypes = {
-  width: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.object]),
-  visible: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object])
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  visible: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
 };
 
 GridUnit.defaultProps = {

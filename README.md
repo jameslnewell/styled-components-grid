@@ -82,3 +82,10 @@ A `number` OR an `object` where the values are `number`s for each desired breakp
 Controls whether the grid unit is visible.
 
 A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `true`.
+
+## Change log
+
+### 1.0.0-preview.6
+
+- fix: switch to `prop-types` to remove `react` warnings
+- fix: add missing `react` dependency to `peerDependencies` 

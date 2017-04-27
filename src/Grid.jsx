@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {map} from 'styled-components-breakpoint';
 
@@ -77,10 +77,10 @@ const Grid = styled.div`
 `;
 
 Grid.propTypes = {
-  wrap: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object]),
-  reverse: React.PropTypes.oneOfType([React.PropTypes.bool, React.PropTypes.object]),
-  horizontalAlign: React.PropTypes.oneOfType([React.PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), React.PropTypes.object]),
-  verticalAlign: React.PropTypes.oneOfType([React.PropTypes.oneOf(['top', 'bototm', 'center', 'stretch']), React.PropTypes.object])
+  wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  reverse: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+  horizontalAlign: PropTypes.oneOfType([PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), PropTypes.object]),
+  verticalAlign: PropTypes.oneOfType([PropTypes.oneOf(['top', 'bototm', 'center', 'stretch']), PropTypes.object])
 };
 
 Grid.defaultProps = {
