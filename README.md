@@ -75,6 +75,11 @@ Whether the grid units should wrap across multiple lines or a single line.
 
 A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `false`.
 
+#### component
+
+The component to render the styles on.
+
+Optional. A `string` or valid React component. Defaults to `div`.
 
 ### &lt;Grid.Unit/&gt;
 
@@ -89,6 +94,12 @@ A `number` OR an `object` where the values are `number`s for each desired breakp
 Controls whether the grid unit is visible.
 
 A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `true`.
+
+#### component
+
+The component to render the styles on.
+
+Optional. A `string` or valid React component. Defaults to `div`.
 
 ## Change log
 

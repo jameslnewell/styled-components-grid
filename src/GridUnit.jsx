@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {map} from 'styled-components-breakpoint';
+import createComponentFromTagProp from 'react-create-component-from-tag-prop';
+
+const GridUnitComponent = createComponentFromTagProp({
+  tag: 'div',
+  prop: 'component',
+  propsToOmit: ['width', 'visible']
+});
 
 //TODO: fix issues with partial pixels
 
@@ -42,9 +49,7 @@ const visibilityMixin = ({visible, theme}) => map(visible, v => {
   }
 }, theme.breakpoints);
 
-const OmitWidth = ({width, visible, ...otherProps}) => <div {...otherProps}/>;
-
-const GridUnit = styled(OmitWidth)`
+const GridUnit = styled(GridUnitComponent)`
   box-sizing: border-box;
   ${widthMixin}
   ${visibilityMixin}

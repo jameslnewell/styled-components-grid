@@ -16,6 +16,7 @@
     "linklocal": "^2.8.0"
   },
   "scripts": {
+    "postinstall": "linklocal",
     "start": "babel-node index.js"
   }
 }

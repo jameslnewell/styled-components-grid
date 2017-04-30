@@ -1,6 +1,13 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {map} from 'styled-components-breakpoint';
+import createComponentFromTagProp from 'react-create-component-from-tag-prop';
+
+const GridComponent = createComponentFromTagProp({
+  tag: 'div',
+  prop: 'component',
+  propsToOmit: ['wrap', 'reverse', 'horizontalAlign', 'verticalAlign']
+});
 
 const wrapMixin = ({wrap, theme}) => map(wrap, w => `flex-wrap: ${w && 'wrap' || 'nowrap'};`, theme.breakpoints);
 
@@ -68,7 +75,7 @@ const alignItemsMixin = ({verticalAlign, theme}) => map(verticalAlign, alignment
   return `align-items: ${rule};`
 }, theme.breakpoints);
 
-const Grid = styled.div`
+const Grid = styled(GridComponent)`
   display: flex;
   ${wrapMixin}
   ${flexDirectionMixin}

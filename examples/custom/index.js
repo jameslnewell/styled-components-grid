@@ -1,6 +1,6 @@
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
-import {styleSheet, ThemeProvider} from 'styled-components';
+import {ServerStyleSheet, ThemeProvider} from 'styled-components';
 import Grid from 'styled-components-grid';
 
 const theme = {
@@ -10,8 +10,9 @@ const theme = {
     lg: 1200
   }
 };
-// styleSheet.reset();
-const html = renderToStaticMarkup(
+
+const sheet = new ServerStyleSheet();
+const html = renderToStaticMarkup(sheet.collectStyles(
   <ThemeProvider theme={theme}>
     <Grid>
       <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
@@ -19,8 +20,8 @@ const html = renderToStaticMarkup(
       <Grid.Unit width={{sm: 1, lg: 1/5}}>Out of this world!</Grid.Unit>
     </Grid>
   </ThemeProvider>
-);
-const css = styleSheet.getCSS();
+));
+const css = sheet.getStyleTags();
 
 console.log(`HTML\n----------------------------------------------\n${html}\n`);
 console.log(`CSS \n----------------------------------------------\n${css}\n`);

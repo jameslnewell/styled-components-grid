@@ -1,6 +1,6 @@
 {
   "name": "styled-components-grid",
-  "version": "1.0.0-preview.7",
+  "version": "1.0.0-preview.8",
   "description": "A responsive grid components for `styled-components`.",
   "keywords": [
     "react",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.8",
+    "react-create-component-from-tag-prop": "^1.2.1",
     "styled-components-breakpoint": "^1.0.0-preview.3"
   },
   "devDependencies": {
