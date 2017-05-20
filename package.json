@@ -1,7 +1,7 @@
 {
   "name": "styled-components-grid",
-  "version": "1.0.0-preview.9",
-  "description": "A responsive grid components for `styled-components`.",
+  "version": "1.0.0-preview.10",
+  "description": "Responsive grid components for `styled-components` 💅.",
   "keywords": [
     "react",
     "styled-components",

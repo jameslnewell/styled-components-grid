@@ -1,6 +1,6 @@
 # styled-components-grid
 
-A responsive grid components for `styled-components`.
+Responsive grid components for `styled-components` 💅.
 
 ## Installation
 
@@ -17,12 +17,14 @@ import Grid from 'styled-components-grid';
 <Grid>
   <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
   <Grid.Unit width={1/3}>Amazing!</Grid.Unit>
-  <Grid.Unit width={{mobile: 1, tablet: 1/2, desktop: 1/4}}>Out of this world!</Grid.Unit>
+  <Grid.Unit width={{tablet: 1/2, desktop: 1/4}}>Out of this world!</Grid.Unit>
 </Grid>
 
 ```
 
 ### Using custom breakpoints
+
+You can customise the provided breakpoint names and values. If you would like to use the same breakpoints as [Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints), you can do so like this:
 
 ```js
 import React from 'react';
@@ -31,9 +33,11 @@ import Grid from 'styled-components-grid';
 
 const theme = {
   breakpoints: {
-    sm: 0,
-    md: 800,
-    lg: 1200
+    xs: 0,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200
   }
 };
 
@@ -41,7 +45,7 @@ const theme = {
   <Grid>
     <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
     <Grid.Unit width={1/3}>Amazing!</Grid.Unit>
-    <Grid.Unit width={{sm: 1, lg: 1/5}}>Out of this world!</Grid.Unit>
+    <Grid.Unit width={{lg: 1/5}}>Out of this world!</Grid.Unit>
   </Grid>
 </ThemeProvider>
 
@@ -102,6 +106,14 @@ The component to render the styles on.
 Optional. A `string` or valid React component. Defaults to `div`.
 
 ## Change log
+
+### 1.0.0-preview.9
+
+- fix: updated documentation
+
+### 1.0.0-preview.8
+
+- fix: `wrap` and other props were broken if you didn't specify a value for the mobile breakpoint. Updated `styled-components-breakpoint` which contains a fix.
 
 ### 1.0.0-preview.7
 
