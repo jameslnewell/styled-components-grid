@@ -12,8 +12,8 @@ const GridUnitComponent = createComponentFromTagProp({
 
 //TODO: fix issues with partial pixels
 
-const widthMixin = ({width, theme}) => map(width, w => {
-  switch (w) {
+const widthMixin = ({width, theme}) => map(width, (value = 1) => {
+  switch (value) {
 
     case 'min':
       return `
@@ -32,7 +32,7 @@ const widthMixin = ({width, theme}) => map(width, w => {
       `;
 
     default:
-      const pct = Math.round(w * 100);
+      const pct = Math.round(value * 100);
       return `
         flex-basis: ${pct}%;
         max-width: ${pct}%;
@@ -41,8 +41,8 @@ const widthMixin = ({width, theme}) => map(width, w => {
   }
 }, theme.breakpoints);
 
-const visibilityMixin = ({visible, theme}) => map(visible, v => {
-  if (v) {
+const visibilityMixin = ({visible, theme}) => map(visible, (value = true) => {
+  if (value) {
     return 'display: inline-block;'; //TODO: maybe this shouldn't be inline block??
   } else {
     return 'display: none;';

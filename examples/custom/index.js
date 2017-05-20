@@ -17,7 +17,7 @@ const html = renderToStaticMarkup(sheet.collectStyles(
     <Grid>
       <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
       <Grid.Unit width={1/3}>Amazing!</Grid.Unit>
-      <Grid.Unit width={{sm: 1, lg: 1/5}}>Out of this world!</Grid.Unit>
+      <Grid.Unit width={{md: 1/4, lg: 1/5}}>Out of this world!</Grid.Unit>
     </Grid>
   </ThemeProvider>
 ));

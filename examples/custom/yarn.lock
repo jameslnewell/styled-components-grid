@@ -1605,16 +1605,16 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-styled-components-breakpoint@^1.0.0-preview.3:
-  version "1.0.0-preview.3"
-  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-1.0.0-preview.3.tgz#c1b5f75988d4fd0bec53f0e8b1a475cf21c6f3ad"
+styled-components-breakpoint@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-1.0.1.tgz#51fb474d9449e228b6f3f2cd232631ec65c149bc"
 
 "styled-components-grid@file:../..":
-  version "1.0.0-preview.7"
+  version "1.0.0-preview.8"
   dependencies:
     prop-types "^15.5.8"
     react-create-component-from-tag-prop "^1.2.1"
-    styled-components-breakpoint "^1.0.0-preview.3"
+    styled-components-breakpoint "^1.0.0"
 
 supports-color@^2.0.0:
   version "2.0.0"

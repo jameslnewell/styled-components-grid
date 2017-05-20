@@ -9,13 +9,13 @@ const GridComponent = createComponentFromTagProp({
   propsToOmit: ['wrap', 'reverse', 'horizontalAlign', 'verticalAlign']
 });
 
-const wrapMixin = ({wrap, theme}) => map(wrap, w => `flex-wrap: ${w && 'wrap' || 'nowrap'};`, theme.breakpoints);
+const wrapMixin = ({wrap, theme}) => map(wrap, (value = true) => `flex-wrap: ${value && 'wrap' || 'nowrap'};`, theme.breakpoints);
 
-const flexDirectionMixin = ({reverse, theme}) => map(reverse, r => `flex-direction: ${r && 'row-reverse' || 'row'};`, theme.breakpoints);
+const flexDirectionMixin = ({reverse, theme}) => map(reverse, value => `flex-direction: ${value && 'row-reverse' || 'row'};`, theme.breakpoints);
 
-const justifyContentMixin = ({horizontalAlign, reverse, theme}) => map(horizontalAlign, alignment => {
+const justifyContentMixin = ({horizontalAlign, reverse, theme}) => map(horizontalAlign, value => {
   let rule = '';
-  switch (alignment) {
+  switch (value) {
 
     default:
     case 'left':
@@ -50,9 +50,9 @@ const justifyContentMixin = ({horizontalAlign, reverse, theme}) => map(horizonta
   return `justify-content: ${rule};`
 }, theme.breakpoints);
 
-const alignItemsMixin = ({verticalAlign, theme}) => map(verticalAlign, alignment => {
+const alignItemsMixin = ({verticalAlign, theme}) => map(verticalAlign, value => {
   let rule = '';
-  switch (alignment) {
+  switch (value) {
 
     case 'top':
       rule = 'flex-start';
