@@ -9,7 +9,15 @@ const GridComponent = createComponentFromTagProp({
   propsToOmit: ['wrap', 'reverse', 'horizontalAlign', 'verticalAlign']
 });
 
-const wrapMixin = ({wrap, theme}) => map(wrap, (value = true) => `flex-wrap: ${value && 'wrap' || 'nowrap'};`, theme.breakpoints);
+const wrapMixin = ({wrap, reverse, theme}) => map(wrap, (value = true) => {
+  if (value && reverse) {
+    return 'flex-wrap: wrap-reverse;';
+  } else if (value) {
+    return 'flex-wrap: wrap;';
+  } else {
+    return 'flex-wrap: wrap;';
+  }
+}, theme.breakpoints);
 
 const flexDirectionMixin = ({reverse, theme}) => map(reverse, value => `flex-direction: ${value && 'row-reverse' || 'row'};`, theme.breakpoints);
 
