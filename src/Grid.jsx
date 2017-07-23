@@ -95,7 +95,7 @@ Grid.propTypes = {
   wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   reverse: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   horizontalAlign: PropTypes.oneOfType([PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), PropTypes.object]),
-  verticalAlign: PropTypes.oneOfType([PropTypes.oneOf(['top', 'bototm', 'center', 'stretch']), PropTypes.object])
+  verticalAlign: PropTypes.oneOfType([PropTypes.oneOf(['top', 'bottom', 'center', 'stretch']), PropTypes.object])
 };
 
 Grid.defaultProps = {
