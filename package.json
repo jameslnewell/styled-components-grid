@@ -10,13 +10,14 @@
     "style"
   ],
   "repository": "jameslnewell/styled-components-grid",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "files": [
-    "dist"
+    "lib"
   ],
   "peerDependencies": {
     "react": "^15",
-    "styled-components": "^1 || ^2.0.0-3"
+    "styled-components": "^1 || ^2"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
@@ -24,18 +25,29 @@
     "styled-components-breakpoint": "^1.0.1"
   },
   "devDependencies": {
+    "@storybook/cli": "^3.1.9",
+    "@storybook/react": "^3.1.9",
     "babel-cli": "^6.22.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "chroma-js": "^1.3.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "styled-components": "^2.0.0-3"
+    "react-live": "^1.7.0",
+    "react-router-dom": "^4.1.2",
+    "styled-components": "^2.1.1",
+    "styled-components-spacing": "^2.1.3",
+    "tradie-template-react-component": "^2.0.0"
   },
   "scripts": {
-    "build": "rm -rf ./dist && mkdir -p ./dist && babel ./src --out-dir ./dist",
-    "watch": "npm run build -- --watch",
-    "prepublish": "npm run build"
+    "tradie": "node ./node_modules/tradie-template-react-component/node_modules/tradie/lib/tradie.js",
+    "clean": "yarn run tradie clean",
+    "lint": "yarn run tradie lint",
+    "build": "yarn run tradie build",
+    "dev": "yarn run tradie dev",
+    "test": "yarn run tradie test",
+    "prepublish": "npm run lint && yarn run build && yarn run test"
   },
   "license": "MIT"
 }

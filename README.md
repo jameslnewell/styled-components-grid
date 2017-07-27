@@ -51,7 +51,7 @@ const theme = {
 
 ```
 
-## API
+## Components
 
 ### &lt;Grid/&gt;
 
@@ -105,7 +105,22 @@ The component to render the styles on.
 
 Optional. A `string` or valid React component. Defaults to `div`.
 
+## Mixins
+
+### grid(opts)
+
+### grid.unit(width, opts)
+
 ## Change log
+
+### 1.0.0
+
+- added `halign` and deprecated `horizontalAlign`
+- added `valign` and deprecated `verticalAlign`
+- stopped rendering default styles when not required in order to make overriding styles easier (less `!important`s in your codebase)
+- added mixins
+- added tests
+- added docs website
 
 ### 1.0.0-preview.9
 

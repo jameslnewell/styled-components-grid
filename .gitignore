@@ -1,6 +1,9 @@
 .idea
+.vscode
 node_modules
 dist
 npm-debug.log
 npm-debug.log*
 yarn-error.log
+lib
+.DS_Store
