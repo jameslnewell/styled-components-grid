@@ -15,7 +15,7 @@ const wrapMixin = ({wrap, reverse, theme}) => map(wrap, (value = true) => {
   } else if (value) {
     return 'flex-wrap: wrap;';
   } else {
-    return 'flex-wrap: wrap;';
+    return 'flex-wrap: nowrap;';
   }
 }, theme.breakpoints);
 
@@ -99,7 +99,7 @@ Grid.propTypes = {
 };
 
 Grid.defaultProps = {
-  wrap: true,
+  wrap: false,
   reverse: false,
   horizontalAlign: 'left',
   verticalAlign: 'stretch'
