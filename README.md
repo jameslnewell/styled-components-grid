@@ -151,6 +151,10 @@ Apply grid unit styles.
 
 ## Change log
 
+### 1.0.0-preview.14
+
+- fixed documentation for the `wrap` default value
+
 ### 1.0.0-preview.13
 
 - added `size` and deprecated `width`
