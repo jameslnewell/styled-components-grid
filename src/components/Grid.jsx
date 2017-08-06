@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {map} from 'styled-components-breakpoint';
 import createComponentFromTagProp from 'react-create-component-from-tag-prop';
 import grid from '../mixins/grid';
 

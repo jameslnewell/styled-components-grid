@@ -12,9 +12,7 @@
   "repository": "jameslnewell/styled-components-grid",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "files": [
-    "lib"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "^15",
     "styled-components": "^1 || ^2"
@@ -48,7 +46,7 @@
     "build": "PUBLIC_PATH=\"/styled-components-grid/\" yarn run tradie build",
     "dev": "yarn run tradie dev",
     "test": "yarn run tradie test",
-    "prepublish": "npm run lint && yarn run build && yarn run test",
+    "prepublish": "yarn run build",
     "postpublish": "gh-pages -d dist/example"
   },
   "license": "MIT"

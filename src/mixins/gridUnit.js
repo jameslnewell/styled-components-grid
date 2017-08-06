@@ -1,10 +1,10 @@
 import {css} from 'styled-components';
 import {map} from 'styled-components-breakpoint';
 
-function size({size, width, theme}) {
+function sizeMixin({size, width, theme}) {
 
   if (width) {
-    console.warn('`width` is deprecated. Use `size` instead.');
+    console.warn('`width` is deprecated. Use `size` instead.'); //eslint-disable-line
   }
 
   return map(size || width, (value = 1) => {
@@ -38,7 +38,7 @@ function size({size, width, theme}) {
   }, theme.breakpoints);
 }
 
-function visibility({visible, theme}) {
+function visibilityMixin({visible, theme}) {
 
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
   if (typeof visible === 'undefined') {
@@ -59,7 +59,7 @@ export default function(props) {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    ${size(props)}
-    ${visibility(props)}
+    ${sizeMixin(props)}
+    ${visibilityMixin(props)}
   `;
 }

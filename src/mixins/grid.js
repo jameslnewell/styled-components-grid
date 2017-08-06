@@ -1,7 +1,7 @@
 import {css} from 'styled-components';
 import {map} from 'styled-components-breakpoint';
 
-function wrap({wrap, reverse, theme}) {
+function wrapMixin({wrap, reverse, theme}) {
 
   return map(wrap, (value = true) => {
     if (value && reverse) {
@@ -14,7 +14,7 @@ function wrap({wrap, reverse, theme}) {
   }, theme.breakpoints);
 }
 
-function direction({reverse, theme}) {
+function directionMixin({reverse, theme}) {
 
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
   if (typeof reverse === 'undefined') {
@@ -24,11 +24,11 @@ function direction({reverse, theme}) {
   return map(reverse, (value = false) => `flex-direction: ${value && 'row-reverse' || 'row'};`, theme.breakpoints);
 }
 
-function justifyContent({halign, horizontalAlign, reverse, theme}) {
+function justifyContentMixin({halign, horizontalAlign, reverse, theme}) {
 
   //warn about deprecated usage
   if (horizontalAlign) {
-    console.warn('`horizontalAlign` is deprecated. Use `valign` instead.');
+    console.warn('`horizontalAlign` is deprecated. Use `valign` instead.'); //eslint-disable-line 
   }
 
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
@@ -75,11 +75,11 @@ function justifyContent({halign, horizontalAlign, reverse, theme}) {
   }, theme.breakpoints);
 };
 
-function alignItems({valign, verticalAlign, theme}) {
+function alignItemsMixin({valign, verticalAlign, theme}) {
 
   //warn about deprecated usage
   if (verticalAlign) {
-    console.warn('`verticalAlign` is deprecated. Use `valign` instead.');
+    console.warn('`verticalAlign` is deprecated. Use `valign` instead.'); //eslint-disable-line
   }
 
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
@@ -117,9 +117,9 @@ function alignItems({valign, verticalAlign, theme}) {
 export default function(props) {
   return css`
     display: flex;
-    ${wrap(props)}
-    ${direction(props)}
-    ${justifyContent(props)}
-    ${alignItems(props)}
+    ${wrapMixin(props)}
+    ${directionMixin(props)}
+    ${justifyContentMixin(props)}
+    ${alignItemsMixin(props)}
   `;
 }
