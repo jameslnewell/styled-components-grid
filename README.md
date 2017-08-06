@@ -103,7 +103,7 @@ A `boolean` OR an `object` where the values are `booleans`s for each desired bre
 
 Whether the grid units should wrap across multiple lines or a single line.
 
-A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `false`.
+A `boolean` OR an `object` where the values are `booleans`s for each desired breakpoint. Defaults to `true`.
 
 #### component
 
