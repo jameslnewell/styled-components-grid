@@ -1,9 +1,13 @@
 import {css} from 'styled-components';
 import {map} from 'styled-components-breakpoint';
 
-//TODO: fix issues with partial pixels
-function width({width, theme}) {
-  return map(width, (value = 1) => {
+function size({size, width, theme}) {
+
+  if (width) {
+    console.warn('`width` is deprecated. Use `size` instead.');
+  }
+
+  return map(size || width, (value = 1) => {
     switch (value) {
 
       case 'min':
@@ -23,7 +27,7 @@ function width({width, theme}) {
         `;
 
       default: {
-        const pct = Math.round(value * 100);
+        const pct = Math.round(value * 100 * 10000) / 10000; //round to 4 decimal places
         return `
           flex-basis: ${pct}%;
           max-width: ${pct}%;
@@ -45,15 +49,17 @@ function visibility({visible, theme}) {
     if (value === false) {
       return 'display: none;';
     } else {
-      return 'display: unset;';
+      return 'display: flex;';
     }
   }, theme.breakpoints);
 }
 
 export default function(props) {
   return css`
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
-    ${width(props)}
+    ${size(props)}
     ${visibility(props)}
   `;
 }

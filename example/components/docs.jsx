@@ -21,10 +21,15 @@ export const Property = ({name, children}) => (
   </div>
 );
 
-export const Value = ({name, example}) => (
+export const Value = ({name, example, children}) => (
   <div>
     <Margin bottom={4}>
       <h3>{name}</h3>
+      {children && (
+        <Margin bottom={2}>
+          {children}
+        </Margin>
+      )}
       <LiveEdit code={example}/>
     </Margin>
   </div>

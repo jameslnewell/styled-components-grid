@@ -16,6 +16,7 @@ const GridUnit = styled(GridUnitComponent)`
 `;
 
 GridUnit.propTypes = {
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
   visible: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
 };

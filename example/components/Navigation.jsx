@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Grid from 'styled-components-grid';
 import {NavLink} from 'react-router-dom'
+import breakpoint from 'styled-components-breakpoint';
 import {Padding, mb} from 'styled-components-spacing';
 
 const Wrapper = styled.nav`
@@ -11,7 +12,10 @@ const Wrapper = styled.nav`
 `;
 
 const Group = styled.div`
-  margin: 0.5em 0;
+  margin: 1em 0;
+  ${breakpoint('tablet')`
+    margin: 0.5em 0;
+  `}
 `;
 
 const H1 = styled(NavLink)`
@@ -23,9 +27,16 @@ const H1 = styled(NavLink)`
   text-decoration: none;
   text-shadow: 1px 1px 4px #3a613a;
   transition: 0.25s text-shadow;
+
+  text-align: center;
+  ${breakpoint('tablet')`
+    text-align: left;
+  `}
+
   :hover {
     text-shadow: 1px 1px 6px #3a613a;
   }
+
 `;
 
 const H2 = styled.p`
@@ -66,14 +77,22 @@ const Link = styled(ActiveLink).attrs({
 const Nav = ({onClick}) => {
   return (
     <Wrapper>
-      <Padding horizontal={3} vertical={5}>
-        <Grid>
+      <Padding horizontal={3} vertical={{mobile: 3, tablet: 5}}>
+        <Grid halign="justify-center">
           <Grid.Unit>
             <Group>
               <H1 to="/">styled-components-grid</H1>
             </Group>
           </Grid.Unit>
-          <Grid.Unit width={{mobile: 1/2, tablet: 1}}>
+          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
+            <Group>
+              <H2>Configuration</H2>
+              <List>
+                <ListItem><Link to="/configuration">Breakpoints</Link></ListItem>
+              </List>
+              </Group>
+            </Grid.Unit> 
+          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
             <Group>
               <H2>Grid</H2>
               <List>
@@ -84,11 +103,11 @@ const Nav = ({onClick}) => {
               </List>
               </Group>
           </Grid.Unit> 
-          <Grid.Unit width={{mobile: 1/2, tablet: 1}}>
+          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
             <Group>
               <H2>GridUnit</H2>
               <List>
-                <ListItem><Link to="/grid-unit/width">width</Link></ListItem>
+                <ListItem><Link to="/grid-unit/size">size</Link></ListItem>
                 <ListItem><Link to="/grid-unit/visible">visible</Link></ListItem>
               </List>
             </Group>

@@ -4,6 +4,7 @@ import Grid, {grid} from 'styled-components-grid';
 import breakpoint from 'styled-components-breakpoint';
 import Navigation from './Navigation';
 import Pages from './Pages';
+import Footer from './Footer';
 
 injectGlobal`
 
@@ -20,14 +21,14 @@ injectGlobal`
 
 const NavigationGridUnit = styled.div`
   display: flex;
-  min-height: 100%;
   ${grid.unit('min')}
   ${breakpoint('tablet')`
     max-width: calc(300px);
+    min-height: 100%;
   `}
 `;
 
-const PageGridUnit = styled.div`
+const BodyGridUnit = styled.div`
   ${grid.unit('max')}
   ${breakpoint('tablet')`
     max-width: calc(100% - 300px);
@@ -42,9 +43,16 @@ export default class App extends React.Component {
           <NavigationGridUnit>
             <Navigation/>
           </NavigationGridUnit>
-          <PageGridUnit>
-            <Pages/>
-          </PageGridUnit>
+          <BodyGridUnit>
+            <Grid>
+              <Grid.Unit size="max">
+                <Pages/>
+              </Grid.Unit>
+              <Grid.Unit size="min">
+                <Footer/>
+              </Grid.Unit>
+            </Grid>
+          </BodyGridUnit>
         </Grid>
       </div>
     );

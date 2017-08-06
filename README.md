@@ -2,6 +2,8 @@
 
 Responsive grid components for `styled-components` 💅.
 
+[Documentation](https://jameslnewell.github.io/styled-components-grid/)
+
 ## Installation
 
     npm install --save styled-components styled-components-grid
@@ -15,16 +17,16 @@ import React from 'react';
 import Grid from 'styled-components-grid';
 
 <Grid>
-  <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
-  <Grid.Unit width={1/3}>Amazing!</Grid.Unit>
-  <Grid.Unit width={{tablet: 1/2, desktop: 1/4}}>Out of this world!</Grid.Unit>
+  <Grid.Unit size={1/6}>Awesome!</Grid.Unit>
+  <Grid.Unit size={1/3}>Amazing!</Grid.Unit>
+  <Grid.Unit size={{tablet: 1/2, desktop: 1/4}}>Out of this world!</Grid.Unit>
 </Grid>
 
 ```
 
 ### Using custom breakpoints
 
-You can customise the provided breakpoint names and values. If you would like to use the same breakpoints as [Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints), you can do so like this:
+You can customise the default breakpoints. If you would like to use the same breakpoints as [Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints), you can do so like this:
 
 ```js
 import React from 'react';
@@ -43,9 +45,9 @@ const theme = {
 
 <ThemeProvider theme={theme}>
   <Grid>
-    <Grid.Unit width={1/6}>Awesome!</Grid.Unit>
-    <Grid.Unit width={1/3}>Amazing!</Grid.Unit>
-    <Grid.Unit width={{lg: 1/5}}>Out of this world!</Grid.Unit>
+    <Grid.Unit size={1/6}>Awesome!</Grid.Unit>
+    <Grid.Unit size={1/3}>Amazing!</Grid.Unit>
+    <Grid.Unit size={{lg: 1/5}}>Out of this world!</Grid.Unit>
   </Grid>
 </ThemeProvider>
 
@@ -113,10 +115,12 @@ Optional. A `string` or valid React component. Defaults to `div`.
 
 ## Change log
 
-### 1.0.0
+### 1.0.0-preview.13
 
+- added `size` and deprecated `width`
 - added `halign` and deprecated `horizontalAlign`
 - added `valign` and deprecated `verticalAlign`
+- made `Grid.Unit` `display: flex`
 - stopped rendering default styles when not required in order to make overriding styles easier (less `!important`s in your codebase)
 - added mixins
 - added tests

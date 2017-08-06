@@ -40,7 +40,6 @@ const ColoredGrid = ({children, ...otherProps}) => {
 ColoredGrid.Unit = styled.div`
 
   //center the contents
-  display: flex;
   align-items: center;
   justify-content: center;
   
