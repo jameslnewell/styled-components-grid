@@ -53,6 +53,30 @@ const theme = {
 
 ```
 
+### Using the mixins
+
+```js
+import React from 'react';
+import styled from 'styled-components';
+import {grid} from 'styled-components-grid';
+
+const FeaturePanel = styled`
+  ${grid()}
+`;
+
+const Feature = styled`
+  ${grid.unit({width: {tablet: 1/3}})}
+`;
+
+<FeaturePanel>
+  <Feature>Awesome!</Feature>
+  <Feature>Amazing!</Feature>
+  <Feature>Out of this world!</Feature>
+</FeaturePanel>
+
+```
+
+
 ## Components
 
 ### &lt;Grid/&gt;
@@ -111,7 +135,19 @@ Optional. A `string` or valid React component. Defaults to `div`.
 
 ### grid(opts)
 
-### grid.unit(width, opts)
+Apply grid styles.
+
+- `halign`
+- `valign`
+- `wrap`
+- `reverse`
+
+### grid.unit(opts)
+
+Apply grid unit styles.
+
+- `size`
+- `visible`
 
 ## Change log
 

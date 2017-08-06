@@ -4,14 +4,14 @@ import gu from './gridUnit';
 
 function grid(opts) {
   return css`
-    ${props => g({...opts, ...props})};
+    ${({theme}) => g({theme, ...opts})};
   `;
 }
 
 function gridUnit(opts) {
-return css`
-  ${props => gu({...opts, ...props})};
-`;
+  return css`
+    ${({theme}) => gu({theme, ...opts})};
+  `;
 }
 
 grid.unit = gridUnit;
