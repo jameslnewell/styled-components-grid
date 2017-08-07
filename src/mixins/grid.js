@@ -7,7 +7,7 @@ function wrapMixin({wrap, reverse, theme}) {
     if (value && reverse) {
       return 'flex-wrap: wrap-reverse;';
     } else if (value === false) {
-      return 'flex-wrap: no-wrap;';
+      return 'flex-wrap: nowrap;';
     } else {
       return 'flex-wrap: wrap;';
     }

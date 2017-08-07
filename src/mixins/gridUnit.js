@@ -56,8 +56,6 @@ function visibilityMixin({visible, theme}) {
 
 export default function(props) {
   return css`
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
     ${sizeMixin(props)}
     ${visibilityMixin(props)}

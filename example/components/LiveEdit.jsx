@@ -8,7 +8,6 @@ import {
 import chroma from 'chroma-js';
 import styled from 'styled-components';
 import Grid, {grid} from 'styled-components-grid';
-import {map} from 'styled-components-breakpoint';
 
 const Box = styled.div`
   ${({height}) => `height: ${height};`}
@@ -53,11 +52,13 @@ ColoredGrid.Unit = styled.div`
 
 `;
 
-export default ({code}) => (
+const LiveEdit = ({code}) => (
   <LiveProvider scope={{Grid: ColoredGrid, Box}} code={code}>
     <StyledLiveEditor/>
     <StyledLiveError/>
     <LivePreview />
   </LiveProvider>
 );
+
+export default LiveEdit;
 

@@ -151,6 +151,11 @@ Apply grid unit styles.
 
 ## Change log
 
+### 1.0.0-preview.15
+
+- fixed typo with `wrap` (changed `no-wrap` to `nowrap`)
+- reverted change: made `Grid.Unit` `display: flex`
+
 ### 1.0.0-preview.14
 
 - fixed documentation for the `wrap` default value

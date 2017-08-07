@@ -6,6 +6,7 @@ import Navigation from './Navigation';
 import Pages from './Pages';
 import Footer from './Footer';
 
+/* eslint-disable no-unused-expressions */
 injectGlobal`
 
   * {
@@ -18,6 +19,7 @@ injectGlobal`
   }
   
 `;
+/* eslint-enable no-unused-expressions */
 
 const NavigationGridUnit = styled.div`
   display: flex;
