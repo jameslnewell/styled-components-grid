@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component, Property, Value} from '../../docs';
+import { Component, Property, Value } from '../../docs';
 
 const valignTop = `
 <Grid valign="top">
@@ -30,12 +30,12 @@ const valignStretch = `
 `;
 
 const Valign = () => (
-  <Component name="Grid">
+  <Component name="">
     <Property name="valign">
-      <Value name="top" example={valignTop}/>
-      <Value name="center" example={valignCenter}/>
-      <Value name="bottom" example={valignBottom}/>
-      <Value name="stretch" example={valignStretch}/>
+      <Value name="top" example={valignTop} />
+      <Value name="center" example={valignCenter} />
+      <Value name="bottom" example={valignBottom} />
+      <Value name="stretch" example={valignStretch} />
     </Property>
   </Component>
 );

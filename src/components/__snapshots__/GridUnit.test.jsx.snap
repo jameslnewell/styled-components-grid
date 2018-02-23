@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridUnit should render size 1`] = `
+.c0 {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-flex-basis: 33.33%;
+  -ms-flex-preferred-size: 33.33%;
+  flex-basis: 33.33%;
+  max-width: 33.33%;
+}
+
+<div
+  className="c0"
+  size={0.3333}
+/>
+`;
+
+exports[`GridUnit should render size as "max" 1`] = `
+.c0 {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  width: auto;
+  max-width: none;
+  max-width: 100%;
+}
+
+<div
+  className="c0"
+  size="max"
+/>
+`;
+
+exports[`GridUnit should render size as "min" 1`] = `
+.c0 {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  width: auto;
+  max-width: none;
+}
+
+<div
+  className="c0"
+  size="min"
+/>
+`;
+
+exports[`GridUnit should render size at different breakpoints 1`] = `
+.c0 {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media (min-width:46.0625em) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width:64.0625em) {
+  .c0 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+<div
+  className="c0"
+  size={
+    Object {
+      "desktop": 0.25,
+      "mobile": 1,
+      "tablet": 0.5,
+    }
+  }
+/>
+`;

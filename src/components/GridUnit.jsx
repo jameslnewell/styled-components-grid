@@ -1,23 +1,25 @@
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 import createComponentFromTagProp from 'react-create-component-from-tag-prop';
+import { type BreakpointValues, type Size, type Visible } from '../types';
 import gridUnit from '../mixins/gridUnit';
 
-const GridUnitComponent = createComponentFromTagProp({
+export type GridUnitProps = {
+  size?: BreakpointValues<Size>,
+  visible?: BreakpointValues<Visible>,
+  children?: React.Node;
+};
+
+const GridUnitComponent: React.Component<GridUnitProps> = createComponentFromTagProp({
   tag: 'div',
   prop: 'component',
   propsToOmit: ['width', 'visible']
 });
 
-const GridUnit = styled(GridUnitComponent)`
+const GridUnit = styled(GridUnitComponent) `
   box-sizing: border-box;
   ${gridUnit}
 `;
-
-GridUnit.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
-  visible: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
-};
 
 export default GridUnit;

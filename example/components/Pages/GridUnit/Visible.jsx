@@ -1,8 +1,8 @@
 import React from 'react';
-import {Component, Property, Value} from '../../docs';
+import { Component, Property, Value } from '../../docs';
 
 const visible = `
-<Grid wrap>
+<Grid>
   <Grid.Unit visible={false}><Box>never visible</Box></Grid.Unit>
   <Grid.Unit visible><Box>always visible</Box></Grid.Unit>
   <Grid.Unit visible={{tablet: false}}><Box>visible on mobile</Box></Grid.Unit>
@@ -12,9 +12,9 @@ const visible = `
 `;
 
 const Visible = () => (
-  <Component name="Grid">
+  <Component name="">
     <Property name="visible">
-      <Value name="true" example={visible}/>
+      <Value name="" example={visible} />
     </Property>
   </Component>
 );

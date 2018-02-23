@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component, Property, Value} from '../../docs';
+import { Component, Property, Value } from '../../docs';
 
 const wrap = `
 <Grid>
@@ -20,12 +20,12 @@ const noWrap = `
 `;
 
 const Wrap = () => (
-  <Component name="Grid">
+  <Component name="">
     <Property name="wrap">
       <Value name="false" example={noWrap}>
         Sizes are kind of ignored in order to fit the units in.
       </Value>
-      <Value name="true" example={wrap}/>
+      <Value name="true" example={wrap} />
     </Property>
   </Component>
 );

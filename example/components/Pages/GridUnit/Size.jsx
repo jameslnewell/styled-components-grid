@@ -1,8 +1,8 @@
 import React from 'react';
-import {Component, Property, Value} from '../../docs';
+import { Component, Property, Value } from '../../docs';
 
 const size = `
-<Grid wrap>
+<Grid>
   <Grid.Unit><Box>#1</Box></Grid.Unit>
   <Grid.Unit size={0.5}><Box>#2</Box></Grid.Unit>
   <Grid.Unit size={0.25}><Box>#3</Box></Grid.Unit>
@@ -11,9 +11,9 @@ const size = `
 `;
 
 const Size = () => (
-  <Component name="Grid">
+  <Component name="">
     <Property name="size">
-      <Value name="" example={size}/>
+      <Value name="" example={size} />
     </Property>
   </Component>
 );

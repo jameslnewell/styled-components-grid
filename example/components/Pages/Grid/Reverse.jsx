@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component, Property, Value} from '../../docs';
+import { Component, Property, Value } from '../../docs';
 
 const reverse = `
 <Grid reverse>
@@ -20,10 +20,10 @@ const normal = `
 `;
 
 const Reverse = () => (
-  <Component name="Grid">
+  <Component name="">
     <Property name="reverse">
-      <Value name="false" example={normal}/>
-      <Value name="true" example={reverse}/>
+      <Value name="false" example={normal} />
+      <Value name="true" example={reverse} />
     </Property>
   </Component>
 );

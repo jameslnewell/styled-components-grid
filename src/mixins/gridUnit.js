@@ -1,15 +1,11 @@
-import {css} from 'styled-components';
-import {map} from 'styled-components-breakpoint';
+// @flow
+import { css } from 'styled-components';
+import { map } from 'styled-components-breakpoint';
+import { type BreakpointValues, type Size, type Visible } from '../types';
 
-function sizeMixin({size, width, theme}) {
-
-  if (width) {
-    console.warn('`width` is deprecated. Use `size` instead.'); //eslint-disable-line
-  }
-
-  return map(size || width, (value = 1) => {
+function size({ size }: { size: BreakpointValues<Size> }) {
+  return map(size, (value = 1) => {
     switch (value) {
-
       case 'min':
         return `
           flex-grow: 0;
@@ -24,22 +20,21 @@ function sizeMixin({size, width, theme}) {
           flex-basis: auto;
           width: auto;
           max-width: none;
+          max-width: 100%; /* TODO: does this always work as expected? */
         `;
 
       default: {
-        const pct = Math.round(value * 100 * 10000) / 10000; //round to 4 decimal places
+        const pct = Math.round((value || 1) * 100 * 10000) / 10000; //round to 4 decimal places
         return `
           flex-basis: ${pct}%;
           max-width: ${pct}%;
         `;
       }
-
     }
-  }, theme.breakpoints);
+  });
 }
 
-function visibilityMixin({visible, theme}) {
-
+function visible({ visible }: { visible: BreakpointValues<Visible> }) {
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
   if (typeof visible === 'undefined') {
     return '';
@@ -49,15 +44,14 @@ function visibilityMixin({visible, theme}) {
     if (value === false) {
       return 'display: none;';
     } else {
-      return 'display: flex;';
+      return 'display: flex;'; /* TODO: does this always work as expected? */
     }
-  }, theme.breakpoints);
+  });
 }
 
-export default function(props) {
+export default function(props: { size: BreakpointValues<Size>, visible: BreakpointValues<Visible> }) {
   return css`
     box-sizing: border-box;
-    ${sizeMixin(props)}
-    ${visibilityMixin(props)}
+    ${size(props)} ${visible(props)};
   `;
 }

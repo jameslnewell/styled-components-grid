@@ -1,47 +1,17 @@
-import {css} from 'styled-components';
-import {map} from 'styled-components-breakpoint';
+// @flow
+import { css } from 'styled-components';
+import { map } from 'styled-components-breakpoint';
+import { type BreakpointValues, type HAlign, type VAlign, type Reverse, type Wrap } from '../types';
 
-function wrapMixin({wrap, reverse, theme}) {
-
-  return map(wrap, (value = true) => {
-    if (value && reverse) {
-      return 'flex-wrap: wrap-reverse;';
-    } else if (value === false) {
-      return 'flex-wrap: nowrap;';
-    } else {
-      return 'flex-wrap: wrap;';
-    }
-  }, theme.breakpoints);
-}
-
-function directionMixin({reverse, theme}) {
-
+function halign({ halign, reverse }: { halign: BreakpointValues<HAlign>, reverse: BreakpointValues<Reverse> }) {
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
-  if (typeof reverse === 'undefined') {
+  if (typeof halign === 'undefined' && typeof reverse === 'undefined') {
     return '';
   }
 
-  return map(reverse, (value = false) => `flex-direction: ${value && 'row-reverse' || 'row'};`, theme.breakpoints);
-}
-
-function justifyContentMixin({halign, horizontalAlign, reverse, theme}) {
-
-  //warn about deprecated usage
-  if (horizontalAlign) {
-    console.warn('`horizontalAlign` is deprecated. Use `valign` instead.'); //eslint-disable-line 
-  }
-
-  //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
-  const alignment = halign || horizontalAlign;
-  if (typeof alignment === 'undefined' && typeof reverse === 'undefined') {
-    return '';
-  }
-
-  return map(alignment, value => {
+  return map(halign, (value = 'left') => {
     let rule = '';
     switch (value) {
-
-      default:
       case 'left':
         if (reverse) {
           rule = 'flex-end';
@@ -70,28 +40,26 @@ function justifyContentMixin({halign, horizontalAlign, reverse, theme}) {
         rule = 'space-between';
         break;
 
+      default:
+        throw new Error(
+          `styled-components-grid: halign must be one of "left", "right", "center", "justify-center" or "justify". Got "${String(
+            value
+          )}"`
+        );
     }
-    return `justify-content: ${rule};`
-  }, theme.breakpoints);
-};
+    return `justify-content: ${rule};`;
+  });
+}
 
-function alignItemsMixin({valign, verticalAlign, theme}) {
-
-  //warn about deprecated usage
-  if (verticalAlign) {
-    console.warn('`verticalAlign` is deprecated. Use `valign` instead.'); //eslint-disable-line
-  }
-
+function valign({ valign }: { valign: BreakpointValues<VAlign> }) {
   //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
-  const alignment = valign || verticalAlign;
-  if (typeof alignment === 'undefined') {
+  if (typeof valign === 'undefined') {
     return '';
   }
 
-  return map(valign || verticalAlign, value => {
+  return map(valign, (value = 'stretch') => {
     let rule = '';
     switch (value) {
-
       case 'top':
         rule = 'flex-start';
         break;
@@ -104,22 +72,53 @@ function alignItemsMixin({valign, verticalAlign, theme}) {
         rule = 'center';
         break;
 
-      default:
       case 'stretch':
         rule = 'stretch';
         break;
 
+      default:
+        throw new Error(
+          `styled-components-grid: valign must be one of "top", "bottom", "center" or "stretch". Got "${String(
+            value
+          )}".`
+        );
     }
-    return `align-items: ${rule};`
-  }, theme.breakpoints);
-};
+    return `align-items: ${rule};`;
+  });
+}
 
-export default function(props) {
+function reverse({ reverse }: { reverse: BreakpointValues<Reverse> }) {
+  //if no value is specified, then don't output any css (it just makes it harder for the consumer to override)
+  if (typeof reverse === 'undefined') {
+    return '';
+  }
+
+  return map(reverse, (value = false) => `flex-direction: ${(value && 'row-reverse') || 'row'};`);
+}
+
+function wrap({ wrap, reverse }: { wrap: BreakpointValues<Wrap>, reverse: BreakpointValues<Reverse> }) {
+  return map(wrap, (value = true) => {
+    if (value && reverse) {
+      return 'flex-wrap: wrap-reverse;';
+    } else if (value === false) {
+      return 'flex-wrap: nowrap;';
+    } else {
+      return 'flex-wrap: wrap;';
+    }
+  });
+}
+
+export default function(props: {
+  wrap: BreakpointValues<Wrap>,
+  reverse: BreakpointValues<Reverse>,
+  halign: BreakpointValues<HAlign>,
+  valign: BreakpointValues<VAlign>
+}) {
   return css`
     display: flex;
-    ${wrapMixin(props)}
-    ${directionMixin(props)}
-    ${justifyContentMixin(props)}
-    ${alignItemsMixin(props)}
+    ${halign(props)}
+    ${valign(props)}
+    ${reverse(props)}
+    ${wrap(props)}
   `;
 }

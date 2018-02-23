@@ -1,26 +1,28 @@
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 import createComponentFromTagProp from 'react-create-component-from-tag-prop';
+import { type BreakpointValues, type HAlign, type VAlign, type Reverse, type Wrap } from '../types';
 import grid from '../mixins/grid';
+import GridUnit from './GridUnit';
 
-const GridComponent = createComponentFromTagProp({
+export type GridProps = {
+  halign?: BreakpointValues<HAlign>,
+  valign?: BreakpointValues<VAlign>,
+  reverse?: BreakpointValues<Reverse>,
+  wrap?: BreakpointValues<Wrap>,
+  children?: GridUnit[]
+};
+
+const GridComponent: React.Component<GridProps> = createComponentFromTagProp({
   tag: 'div',
   prop: 'component',
-  propsToOmit: ['halign', 'valign', 'wrap', 'reverse', 'horizontalAlign', 'verticalAlign']
+  propsToOmit: ['halign', 'valign', 'reverse', 'wrap']
 });
 
-const Grid = styled(GridComponent)`
+const Grid = styled(GridComponent) `
   display: flex;
   ${grid}
 `;
-
-Grid.propTypes = {
-  halign: PropTypes.oneOfType([PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), PropTypes.object]),
-  valign: PropTypes.oneOfType([PropTypes.oneOf(['top', 'bottom', 'center', 'stretch']), PropTypes.object]),
-  wrap: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-  reverse: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-  horizontalAlign: PropTypes.oneOfType([PropTypes.oneOf(['left', 'right', 'center', 'justify-center', 'justify']), PropTypes.object]),
-  verticalAlign: PropTypes.oneOfType([PropTypes.oneOf(['top', 'bottom', 'center', 'stretch']), PropTypes.object])
-};
 
 export default Grid;

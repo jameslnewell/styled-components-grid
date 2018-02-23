@@ -1,6 +1,10 @@
+import grid from './mixins/grid';
+import gridUnit from './mixins/gridUnit';
+import Grid from './components/Grid';
+import GridUnit from './components/GridUnit';
 
-import grid from './mixins';
-import Grid from './components';
+grid.unit = gridUnit;
+Grid.Unit = GridUnit;
 
-export {grid};
+export { grid };
 export default Grid;

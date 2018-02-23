@@ -1,14 +1,22 @@
 # styled-components-grid
 
+[![Build Status](https://travis-ci.org/jameslnewell/styled-components-grid.svg?branch=master)](https://travis-ci.org/jameslnewell/styled-components-grid)
+
 Responsive grid components for `styled-components` 💅.
 
-[Documentation](https://jameslnewell.github.io/styled-components-grid/)
+> [Change log](https://github.com/jameslnewell/styled-components-grid/blob/master/CHANGELOG.md)
+
+> Have a look 👀 at [`styled-components-breakpoint`](https://github.com/jameslnewell/styled-components-breakpoint) and [`styled-components-spacing`](https://github.com/jameslnewell/styled-components-spacing) which work well with this package.
 
 ## Installation
 
-    npm install --save styled-components styled-components-grid
-    
+```bash
+yarn add styled-components styled-components-grid
+```
+
 ## Usage
+
+> [Examples](https://jameslnewell.github.io/styled-components-grid/)
 
 ### Using the default breakpoints
 
@@ -17,11 +25,10 @@ import React from 'react';
 import Grid from 'styled-components-grid';
 
 <Grid>
-  <Grid.Unit size={1/6}>Awesome!</Grid.Unit>
-  <Grid.Unit size={1/3}>Amazing!</Grid.Unit>
-  <Grid.Unit size={{tablet: 1/2, desktop: 1/4}}>Out of this world!</Grid.Unit>
-</Grid>
-
+  <Grid.Unit size={1 / 6}>Awesome!</Grid.Unit>
+  <Grid.Unit size={1 / 3}>Amazing!</Grid.Unit>
+  <Grid.Unit size={{ tablet: 1 / 2, desktop: 1 / 4 }}>Out of this world!</Grid.Unit>
+</Grid>;
 ```
 
 ### Using custom breakpoints
@@ -30,7 +37,7 @@ You can customise the default breakpoints. If you would like to use the same bre
 
 ```js
 import React from 'react';
-import {ThemeProvider} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import Grid from 'styled-components-grid';
 
 const theme = {
@@ -45,12 +52,11 @@ const theme = {
 
 <ThemeProvider theme={theme}>
   <Grid>
-    <Grid.Unit size={1/6}>Awesome!</Grid.Unit>
-    <Grid.Unit size={1/3}>Amazing!</Grid.Unit>
-    <Grid.Unit size={{lg: 1/5}}>Out of this world!</Grid.Unit>
+    <Grid.Unit size={1 / 6}>Awesome!</Grid.Unit>
+    <Grid.Unit size={1 / 3}>Amazing!</Grid.Unit>
+    <Grid.Unit size={{ lg: 1 / 5 }}>Out of this world!</Grid.Unit>
   </Grid>
-</ThemeProvider>
-
+</ThemeProvider>;
 ```
 
 ### Using the mixins
@@ -58,24 +64,22 @@ const theme = {
 ```js
 import React from 'react';
 import styled from 'styled-components';
-import {grid} from 'styled-components-grid';
+import { grid } from 'styled-components-grid';
 
 const FeaturePanel = styled`
   ${grid()}
 `;
 
 const Feature = styled`
-  ${grid.unit({width: {tablet: 1/3}})}
+  ${grid.unit({ width: { tablet: 1 / 3 } })}
 `;
 
 <FeaturePanel>
   <Feature>Awesome!</Feature>
   <Feature>Amazing!</Feature>
   <Feature>Out of this world!</Feature>
-</FeaturePanel>
-
+</FeaturePanel>;
 ```
-
 
 ## Components
 
@@ -137,54 +141,14 @@ Optional. A `string` or valid React component. Defaults to `div`.
 
 Apply grid styles.
 
-- `halign`
-- `valign`
-- `wrap`
-- `reverse`
+* `halign`
+* `valign`
+* `wrap`
+* `reverse`
 
 ### grid.unit(opts)
 
 Apply grid unit styles.
 
-- `size`
-- `visible`
-
-## Change log
-
-### 1.0.0-preview.15
-
-- fixed typo with `wrap` (changed `no-wrap` to `nowrap`)
-- reverted change: made `Grid.Unit` `display: flex`
-
-### 1.0.0-preview.14
-
-- fixed documentation for the `wrap` default value
-
-### 1.0.0-preview.13
-
-- added `size` and deprecated `width`
-- added `halign` and deprecated `horizontalAlign`
-- added `valign` and deprecated `verticalAlign`
-- made `Grid.Unit` `display: flex`
-- stopped rendering default styles when not required in order to make overriding styles easier (less `!important`s in your codebase)
-- added mixins
-- added tests
-- added docs website
-
-### 1.0.0-preview.9
-
-- fix: updated documentation
-
-### 1.0.0-preview.8
-
-- fix: `wrap` and other props were broken if you didn't specify a value for the mobile breakpoint. Updated `styled-components-breakpoint` which contains a fix.
-
-### 1.0.0-preview.7
-
-- added: `min` and `max` widths to `Grid.Unit`
-- added: docs for `wrap` to `Grid`
-
-### 1.0.0-preview.6
-
-- fix: switch to `prop-types` to remove `react` warnings
-- fix: add missing `react` dependency to `peerDependencies` 
+* `size`
+* `visible`
