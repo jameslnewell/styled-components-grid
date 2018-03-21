@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-shadow */
 import { css } from 'styled-components';
 import { map } from 'styled-components-breakpoint';
 import { type BreakpointValues, type Size, type Visible } from '../types';

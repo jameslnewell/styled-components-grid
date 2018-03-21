@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import { Padding } from 'styled-components-spacing';
 
 import Introduction from './Introduction';

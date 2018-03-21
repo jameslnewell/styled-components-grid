@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import styled from 'styled-components';
 import { Margin } from 'styled-components-spacing';
 import LiveEdit from './LiveEdit';
 

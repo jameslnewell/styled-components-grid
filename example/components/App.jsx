@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
-import Grid, { grid } from 'styled-components-grid';
-import breakpoint, { createStatic } from 'styled-components-breakpoint';
-import Navigation from './Navigation';
+import { createStatic } from 'styled-components-breakpoint';
 import Pages from './Pages';
 import { DEFAULT_BREAKPOINTS, CUSTOM_BREAKPOINTS } from './utils';
 
@@ -41,27 +39,6 @@ const Main = styled.main`
 
 const H1 = styled.h1`
   margin: 1em 0;
-`;
-
-const H2 = styled.h2`
-  margin: 1em 0;
-`;
-
-const P = styled.p`
-  margin: 1em 0;
-`;
-
-const Button = styled.button`
-  padding: 0.5em;
-  font-size: 1em;
-  border-radius: 3px;
-`;
-
-const Instruction = styled.blockquote`
-  margin: 0;
-  font-size: 0.9em;
-  font-weight: bold;
-  text-align: right;
 `;
 
 export default class App extends React.Component {

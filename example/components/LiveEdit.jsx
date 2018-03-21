@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {
   LiveProvider,
@@ -7,7 +8,7 @@ import {
 } from 'react-live'
 import chroma from 'chroma-js';
 import styled from 'styled-components';
-import Grid, { grid } from 'styled-components-grid';
+import Grid, { grid } from '../../src/index';
 
 const Box = styled.div`
   ${({ height }) => `height: ${height};`}

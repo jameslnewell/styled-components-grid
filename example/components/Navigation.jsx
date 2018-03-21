@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Grid from 'styled-components-grid';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import breakpoint from 'styled-components-breakpoint';
-import {Padding, mb} from 'styled-components-spacing';
+import { Padding, mb } from 'styled-components-spacing';
+import Grid from '../../src/index';
 
 const Wrapper = styled.nav`
   flex-grow: 1;
@@ -13,12 +13,12 @@ const Wrapper = styled.nav`
 
 const Group = styled.div`
   margin: 1em 0;
-  ${breakpoint('tablet')`
+  ${breakpoint('tablet') `
     margin: 0.5em 0;
   `}
 `;
 
-const H1 = styled(NavLink)`
+const H1 = styled(NavLink) `
   ${mb(3)};
   display: block;
   color: #fff;
@@ -29,7 +29,7 @@ const H1 = styled(NavLink)`
   transition: 0.25s text-shadow;
 
   text-align: center;
-  ${breakpoint('tablet')`
+  ${breakpoint('tablet') `
     text-align: left;
   `}
 
@@ -55,11 +55,11 @@ const ListItem = styled.li`
 
 const activeClassName = 'active'
 
-const ActiveLink = props => <NavLink {...props} activeClassName={activeClassName}/>;
+const ActiveLink = props => <NavLink {...props} activeClassName={activeClassName} />;
 
 const Link = styled(ActiveLink).attrs({
   activeClassName
-})`
+}) `
   display: inline-block;
   cursor: pointer;
   color: #444;
@@ -74,25 +74,25 @@ const Link = styled(ActiveLink).attrs({
   }
 `;
 
-const Nav = ({onClick}) => {
+const Nav = () => {
   return (
     <Wrapper>
-      <Padding horizontal={3} vertical={{mobile: 3, tablet: 5}}>
+      <Padding horizontal={3} vertical={{ mobile: 3, tablet: 5 }}>
         <Grid halign="justify-center">
           <Grid.Unit>
             <Group>
               <H1 to="/">styled-components-grid</H1>
             </Group>
           </Grid.Unit>
-          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
+          <Grid.Unit size={{ mobile: 'min', tablet: 1 }}>
             <Group>
               <H2>Configuration</H2>
               <List>
                 <ListItem><Link to="/configuration">Breakpoints</Link></ListItem>
               </List>
-              </Group>
-            </Grid.Unit> 
-          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
+            </Group>
+          </Grid.Unit>
+          <Grid.Unit size={{ mobile: 'min', tablet: 1 }}>
             <Group>
               <H2>Grid</H2>
               <List>
@@ -101,9 +101,9 @@ const Nav = ({onClick}) => {
                 <ListItem><Link to="/grid/wrap">wrap</Link></ListItem>
                 <ListItem><Link to="/grid/reverse">reverse</Link></ListItem>
               </List>
-              </Group>
-          </Grid.Unit> 
-          <Grid.Unit size={{mobile: 'min', tablet: 1}}>
+            </Group>
+          </Grid.Unit>
+          <Grid.Unit size={{ mobile: 'min', tablet: 1 }}>
             <Group>
               <H2>GridUnit</H2>
               <List>
