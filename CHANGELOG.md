@@ -1,5 +1,9 @@
 # Change log
 
+## 2.0.0
+
+No changes
+
 ## 2.0.0-preview.1
 
 * upgraded `react` and `styled-components` `peerDependency`s
