@@ -71,7 +71,7 @@ const FeaturePanel = styled`
 `;
 
 const Feature = styled`
-  ${grid.unit({ width: { tablet: 1 / 3 } })}
+  ${grid.unit({ size: { tablet: 1 / 3 } })}
 `;
 
 <FeaturePanel>
