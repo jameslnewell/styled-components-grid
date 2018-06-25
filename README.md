@@ -67,7 +67,7 @@ import styled from 'styled-components';
 import { grid } from 'styled-components-grid';
 
 const FeaturePanel = styled`
-  ${grid()}
+  ${grid({})}
 `;
 
 const Feature = styled`
