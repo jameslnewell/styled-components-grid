@@ -1,5 +1,10 @@
 # Change log
 
+### 2.1.0
+
+* added the `jsnext:main` field
+* added badges to README
+
 ## 2.0.1
 
 * fixed docs ([#15](https://github.com/jameslnewell/styled-components-grid/pull/15)) ([#16](https://github.com/jameslnewell/styled-components-grid/pull/14))

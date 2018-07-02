@@ -1,6 +1,6 @@
 # styled-components-grid
 
-[![Build Status](https://travis-ci.org/jameslnewell/styled-components-grid.svg?branch=master)](https://travis-ci.org/jameslnewell/styled-components-grid)
+![npm](https://img.shields.io/npm/v/styled-components-grid.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/styled-components-grid.svg) ![npm](https://img.shields.io/npm/dm/styled-components-grid.svg) [![Build Status](https://travis-ci.org/jameslnewell/styled-components-grid.svg?branch=master)](https://travis-ci.org/jameslnewell/styled-components-grid)
 
 Responsive grid components for `styled-components` 💅.
 
