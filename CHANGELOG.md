@@ -1,8 +1,12 @@
 # Change log
 
+### 2.2.0
+
+* bumped `react-create-component-from-tag-prop`
+
 ### 2.1.0
 
-* added the `jsnext:main` field
+* added the `module` field
 * added badges to README
 
 ## 2.0.1
