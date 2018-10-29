@@ -1,5 +1,10 @@
 # Change log
 
+### 2.2.1
+
+* fixed `Grid.Unit` size prop for `0` value
+* fixed documentation for the `size` prop
+
 ### 2.2.0
 
 * bumped `react-create-component-from-tag-prop`

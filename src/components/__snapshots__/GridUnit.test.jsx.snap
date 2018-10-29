@@ -84,10 +84,10 @@ exports[`GridUnit should render size at different breakpoints 1`] = `
 
 @media (min-width:64.0625em) {
   .c0 {
-    -webkit-flex-basis: 25%;
-    -ms-flex-preferred-size: 25%;
-    flex-basis: 25%;
-    max-width: 25%;
+    -webkit-flex-basis: 0%;
+    -ms-flex-preferred-size: 0%;
+    flex-basis: 0%;
+    max-width: 0%;
   }
 }
 
@@ -95,7 +95,7 @@ exports[`GridUnit should render size at different breakpoints 1`] = `
   className="c0"
   size={
     Object {
-      "desktop": 0.25,
+      "desktop": 0,
       "mobile": 1,
       "tablet": 0.5,
     }

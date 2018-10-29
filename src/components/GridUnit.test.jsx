@@ -25,10 +25,10 @@ describe('GridUnit', () => {
   });
 
   it('should render size at different breakpoints', () => {
-    const element = renderer.create(<GridUnit size={{ mobile: 1, tablet: 0.5, desktop: 0.25 }} />).toJSON();
+    const element = renderer.create(<GridUnit size={{ mobile: 1, tablet: 0.5, desktop: 0 }} />).toJSON();
     expect(element).toHaveStyleRule('flex-basis', '100%');
     expect(element).toHaveStyleRule('flex-basis', '50%', { media: '(min-width:46.0625em)' });
-    expect(element).toHaveStyleRule('flex-basis', '25%', { media: '(min-width:64.0625em)' });
+    expect(element).toHaveStyleRule('flex-basis', '0%', { media: '(min-width:64.0625em)' });
     expect(element).toMatchSnapshot();
   });
 
