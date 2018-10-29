@@ -25,7 +25,7 @@ function size({ size }: { size: BreakpointValues<Size> }) {
         `;
 
       default: {
-        const pct = Math.round((value || 1) * 100 * 10000) / 10000; //round to 4 decimal places
+        const pct = Math.round((typeof value === 'number' ? value : 1) * 100 * 10000) / 10000; //round to 4 decimal places
         return `
           flex-basis: ${pct}%;
           max-width: ${pct}%;
