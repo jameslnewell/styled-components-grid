@@ -121,7 +121,7 @@ Optional. A `string` or valid React component. Defaults to `div`.
 
 Controls the width of the grid unit.
 
-A `number` between `0` and `1` OR a `string` of `min` or `max` OR an `object` where the values are `number`s or `string`s for each desired breakpoint. Defaults to `1`.
+A `number` between `0` and `1` OR a `string` of `min` or `max` OR an `object` where the values are a `number` between `0` and `1` OR a `string` of `min` or `max` for each desired breakpoint.
 
 #### visible
 
