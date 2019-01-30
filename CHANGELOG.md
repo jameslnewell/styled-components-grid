@@ -1,5 +1,9 @@
 # Change log
 
+### 2.2.2
+
+* bumped support of `styled-components` ([#20](https://github.com/jameslnewell/styled-components-grid/pull/20))
+
 ### 2.2.1
 
 * fixed `Grid.Unit` size prop for `0` value
