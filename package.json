@@ -10,7 +10,7 @@
   "files": ["dist/cjs", "dist/esm"],
   "peerDependencies": {
     "react": ">= 15 < 17",
-    "styled-components": ">= 1 < 4"
+    "styled-components": ">= 1 < 5"
   },
   "dependencies": {
     "react-create-component-from-tag-prop": "^1.4.0",
