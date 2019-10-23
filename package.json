@@ -1,49 +1,89 @@
 {
   "name": "styled-components-grid",
-  "version": "2.2.2",
+  "version": "3.0.0-preview.1",
   "description": "Responsive grid components for `styled-components` 💅.",
-  "keywords": ["react", "styled-components", "grid", "responsive", "style"],
-  "repository": "jameslnewell/styled-components-grid",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "jsnext:main": "dist/esm/index.js",
-  "files": ["dist/cjs", "dist/esm"],
-  "peerDependencies": {
-    "react": ">= 15 < 17",
-    "styled-components": ">= 1 < 5"
-  },
+  "keywords": [
+    "react",
+    "styled-components",
+    "grid",
+    "responsive",
+    "style"
+  ],
+  "repository": "jameslnewell/styled-components-spacing",
+  "files": [
+    "dist"
+  ],
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "react-create-component-from-tag-prop": "^1.4.0",
-    "styled-components-breakpoint": "^2.0.2"
+    "react-router-dom": "^5.1.2",
+    "styled-components-breakpoint": "^3.0.0-preview.15"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.9.5",
+    "@types/styled-components": "^4.1.19",
+    "react": ">= 15 < 17",
+    "styled-components": ">= 1 <= 4"
   },
   "devDependencies": {
-    "@tradie/react-component-scripts": "^1.0.0-alpha.a573b72a",
-    "chroma-js": "^1.3.6",
-    "gh-pages": "^1.1.0",
-    "husky": "^0.14.3",
-    "jest-styled-components": "^5.0.0",
-    "lint-staged": "^6.1.1",
-    "prettier": "^1.10.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-live": "^1.9.2",
-    "react-router-dom": "^4.2.2",
-    "react-test-renderer": "^16.2.0",
-    "styled-components": "^3.1.6",
-    "styled-components-spacing": "^3.0.0"
+    "@babel/core": "^7.6.4",
+    "@jameslnewell/babel-preset": "^2.0.0",
+    "@jameslnewell/editor-config": "^1.0.1",
+    "@jameslnewell/eslint-config": "^0.13.3",
+    "@jameslnewell/jest-preset-test": "^4.0.0",
+    "@jameslnewell/prettier-config": "^1.0.1",
+    "@jameslnewell/typescript-config": "^3.0.0",
+    "@testing-library/react": "^9.1.4",
+    "@types/chroma-js": "^1.4.3",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/styled-components": "^4.1.19",
+    "chroma-js": "^2.0.6",
+    "eslint": "^6.3.0",
+    "gh-pages": "^2.1.1",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-styled-components": "^6.3.3",
+    "lint-staged": "^9.2.5",
+    "microbundle": "^0.11.0",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "react": ">=15",
+    "react-dom": "^16.9.0",
+    "react-live": "^2.2.1",
+    "styled-components": "^4.3.2",
+    "styled-components-spacing": "^4.0.0-preview.3",
+    "typescript": "^3.6.3"
   },
   "scripts": {
-    "clean": "tradie clean",
-    "lint": "tradie lint",
-    "build": "tradie build",
-    "dev": "tradie dev",
-    "test": "tradie test",
-    "prepublishOnly": "yarn run clean && yarn run build && yarn run test",
-    "postpublish": "gh-pages -d dist/example",
-    "precommit": "lint-staged"
+    "clean": "rm -rf dist .cache .rts2_cache* example/dist example.cache",
+    "check:linting": "eslint --fix --ext .ts,.js,.jsx src",
+    "check:typing:package": "tsc --noEmit --project tsconfig.json",
+    "check:typing:example": "tsc --noEmit --project example/tsconfig.json",
+    "check:typing": "yarn run check:typing:package && yarn run check:typing:example",
+    "check": "yarn run check:linting && yarn run check:typing",
+    "build:bundle": "microbundle build -f es,cjs --tsconfig tsconfig.build.json",
+    "build:example": "parcel build example/src/index.html --public-url /styled-components-spacing --out-dir example/dist",
+    "build": "yarn run build:bundle && yarn run build:example",
+    "test": "jest",
+    "deploy": "gh-pages -d example/dist",
+    "start": "parcel example/src/index.html --out-dir example/dist",
+    "prepublishOnly": "yarn run clean && yarn run check && yarn run build && yarn run test && yarn run deploy"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "*.{js,json,md}": ["prettier --write", "git add"]
+    "*.{md,json,js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "license": "MIT"
 }

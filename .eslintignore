@@ -1,6 +1,5 @@
-.vscode
+dist
 .cache
-.rts2_cache*
 node_modules
 yarn-error.log
-dist
+.rts2_cache*

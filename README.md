@@ -21,13 +21,15 @@ yarn add styled-components styled-components-grid
 ### Using the default breakpoints
 
 ```js
-import React from 'react';
+import * as React from 'react';
 import Grid from 'styled-components-grid';
 
 <Grid>
   <Grid.Unit size={1 / 6}>Awesome!</Grid.Unit>
   <Grid.Unit size={1 / 3}>Amazing!</Grid.Unit>
-  <Grid.Unit size={{ tablet: 1 / 2, desktop: 1 / 4 }}>Out of this world!</Grid.Unit>
+  <Grid.Unit size={{tablet: 1 / 2, desktop: 1 / 4}}>
+    Out of this world!
+  </Grid.Unit>
 </Grid>;
 ```
 
@@ -36,8 +38,8 @@ import Grid from 'styled-components-grid';
 You can customise the default breakpoints. If you would like to use the same breakpoints as [Bootstrap](https://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints), you can do so like this:
 
 ```js
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import * as React from 'react';
+import {ThemeProvider} from 'styled-components';
 import Grid from 'styled-components-grid';
 
 const theme = {
@@ -46,15 +48,15 @@ const theme = {
     sm: 576,
     md: 768,
     lg: 992,
-    xl: 1200
-  }
+    xl: 1200,
+  },
 };
 
 <ThemeProvider theme={theme}>
   <Grid>
     <Grid.Unit size={1 / 6}>Awesome!</Grid.Unit>
     <Grid.Unit size={1 / 3}>Amazing!</Grid.Unit>
-    <Grid.Unit size={{ lg: 1 / 5 }}>Out of this world!</Grid.Unit>
+    <Grid.Unit size={{lg: 1 / 5}}>Out of this world!</Grid.Unit>
   </Grid>
 </ThemeProvider>;
 ```
@@ -62,16 +64,16 @@ const theme = {
 ### Using the mixins
 
 ```js
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
-import { grid } from 'styled-components-grid';
+import {grid} from 'styled-components-grid';
 
 const FeaturePanel = styled`
   ${grid({})}
 `;
 
 const Feature = styled`
-  ${grid.unit({ size: { tablet: 1 / 3 } })}
+  ${grid.unit({size: {tablet: 1 / 3}})}
 `;
 
 <FeaturePanel>
@@ -141,14 +143,14 @@ Optional. A `string` or valid React component. Defaults to `div`.
 
 Apply grid styles.
 
-* `halign`
-* `valign`
-* `wrap`
-* `reverse`
+- `halign`
+- `valign`
+- `wrap`
+- `reverse`
 
 ### grid.unit(opts)
 
 Apply grid unit styles.
 
-* `size`
-* `visible`
+- `size`
+- `visible`

@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    // "rootDir": ".."
+  },
+  "include": ["src", "typings", "../typings"],
+  "exclude": ["node_modules"]
+}
