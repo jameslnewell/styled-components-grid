@@ -3,7 +3,12 @@ import * as React from 'react';
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live';
 import chroma from 'chroma-js';
 import styled from 'styled-components';
-import {grid, GridProps, Grid, GridUnitProps} from '../../../src/index';
+import {
+  grid,
+  ThemedGridProps,
+  Grid,
+  ThemedGridUnitProps,
+} from '../../../src/index';
 
 const Box = styled.div<{height: string}>`
   ${({height}) => `height: ${height};`}
@@ -21,7 +26,7 @@ const StyledLiveError = styled(LiveError)`
   font-size: 0.8em;
 `;
 
-export const ColoredGrid = ({children, ...otherProps}: GridProps) => {
+export const ColoredGrid = ({children, ...otherProps}: ThemedGridProps) => {
   const colors = chroma
     .scale(['rgb(152,251,152)', 'rgb(58,97,58)'])
     .colors(React.Children.count(children));
@@ -39,7 +44,7 @@ export const ColoredGrid = ({children, ...otherProps}: GridProps) => {
   );
 };
 
-ColoredGrid.Unit = styled.div<GridUnitProps>`
+ColoredGrid.Unit = styled.div<ThemedGridUnitProps>`
   //center the contents
   align-items: center;
   justify-content: center;

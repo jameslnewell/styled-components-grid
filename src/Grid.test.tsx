@@ -1,8 +1,8 @@
 import 'jest-styled-components';
 import * as React from 'react';
 import {render} from '@testing-library/react';
-import {HorizontalAlign, VerticalAlign} from '../types';
-import {Grid} from './Grid';
+import {HorizontalAlign, VerticalAlign} from '.';
+import {Grid} from '.';
 
 const halignValues = {
   left: 'flex-start',

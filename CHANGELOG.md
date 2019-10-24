@@ -5,6 +5,13 @@
 #### Breaking changes
 
 - removed `visible` prop from `grid.unit` - use `const visibility = visible => map(visible, v => v ? 'display: block;' : 'display: none;');` instead
+- Rewrote the library in Typescript. This is a huge enhancement for anyone using Typescript but for anyone using FlowType, you will lose typings.
+
+#### Additions
+
+- Increased the supported version range for `styled-components` to support `v4`
+- added `createGrid()` and `createGridUnit()` methods for creating a grid components with static breakpoints
+- Added a license file
 
 ### 2.2.2
 

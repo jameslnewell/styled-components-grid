@@ -9188,15 +9188,15 @@ style-inject@^0.3.0:
   resolved "https://registry.yarnpkg.com/style-inject/-/style-inject-0.3.0.tgz#d21c477affec91811cc82355832a700d22bf8dd3"
   integrity sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==
 
+styled-components-breakpoint@3.0.0-preview.19:
+  version "3.0.0-preview.19"
+  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.19.tgz#1fd744417ebee79ea9384b58c34e6909821ceb03"
+  integrity sha512-fjpss6ZgrPJd0PNqmYBblUizczFyU7JLclRVcO00j6ges5nah88OjZDL/JRcVXGz4cUX8dhG9JZgV4oPaNBC+A==
+
 styled-components-breakpoint@^3.0.0-preview.14:
   version "3.0.0-preview.17"
   resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.17.tgz#5f7a37684ed4bf86ce22015cb5b7a855bfea1799"
   integrity sha512-qfvKdDnZL9Toi0n+wXzNocw04Ny9KQOUwP2cq4RWEWBhsN3nVtI5qhKF3sccjdBC5OMBeFoyR7HHOaK8qpQBaQ==
-
-styled-components-breakpoint@^3.0.0-preview.15:
-  version "3.0.0-preview.15"
-  resolved "https://registry.yarnpkg.com/styled-components-breakpoint/-/styled-components-breakpoint-3.0.0-preview.15.tgz#8503295866a47334c75d48b51502a76c7b6496db"
-  integrity sha512-s9qZ0tmmAsFKJCLE0/PzCUIheEihqEhPsnAil4L16e9bXej005XX+qvcXlM4qDqb8Nq4B1j99c41IcxrpZ4P8Q==
 
 styled-components-spacing@^4.0.0-preview.3:
   version "4.0.0-preview.3"

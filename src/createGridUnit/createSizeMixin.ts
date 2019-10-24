@@ -1,13 +1,12 @@
-/* eslint-disable no-shadow,@typescript-eslint/explicit-function-return-type */
-import {css} from 'styled-components';
-import {map, ThemedValueOrValueMap} from 'styled-components-breakpoint';
-import {Size} from '../types';
+import {
+  MapFunction,
+  BreakpointNameConstraint,
+} from 'styled-components-breakpoint';
+import {GridUnitOptions} from './types';
 
-export interface GridUnitOptions {
-  size?: ThemedValueOrValueMap<Size>;
-}
-
-const size = ({size}: GridUnitOptions) => {
+export const createSizeMixin = <B extends BreakpointNameConstraint>(
+  map: MapFunction<B>,
+) => ({size}: GridUnitOptions<B>) => {
   if (size === undefined) {
     return `
       flex-basis: 100%;
@@ -40,11 +39,4 @@ const size = ({size}: GridUnitOptions) => {
       }
     }
   });
-};
-
-export const unit = (props: GridUnitOptions) => {
-  return css`
-    box-sizing: border-box;
-    ${size(props)};
-  `;
 };

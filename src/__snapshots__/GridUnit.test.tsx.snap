@@ -3,7 +3,6 @@
 exports[`GridUnit should render size 1`] = `
 .c0 {
   box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-flex-basis: 33.33%;
   -ms-flex-preferred-size: 33.33%;
   flex-basis: 33.33%;
@@ -17,7 +16,6 @@ exports[`GridUnit should render size 1`] = `
 
 exports[`GridUnit should render size as "max" 1`] = `
 .c0 {
-  box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -39,7 +37,6 @@ exports[`GridUnit should render size as "max" 1`] = `
 exports[`GridUnit should render size as "min" 1`] = `
 .c0 {
   box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -58,7 +55,6 @@ exports[`GridUnit should render size as "min" 1`] = `
 
 exports[`GridUnit should render size at different breakpoints 1`] = `
 .c0 {
-  box-sizing: border-box;
   box-sizing: border-box;
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;

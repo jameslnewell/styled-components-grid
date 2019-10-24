@@ -9,7 +9,7 @@
     "responsive",
     "style"
   ],
-  "repository": "jameslnewell/styled-components-spacing",
+  "repository": "jameslnewell/styled-components-grid",
   "files": [
     "dist"
   ],
@@ -20,7 +20,7 @@
   "dependencies": {
     "react-create-component-from-tag-prop": "^1.4.0",
     "react-router-dom": "^5.1.2",
-    "styled-components-breakpoint": "^3.0.0-preview.15"
+    "styled-components-breakpoint": "3.0.0-preview.19"
   },
   "peerDependencies": {
     "@types/react": "^16.9.5",
