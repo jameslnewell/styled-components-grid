@@ -31,16 +31,3 @@ export const Main = styled.main`
 export const H1 = styled.h1`
   margin: 1em 0;
 `;
-
-export const Button = styled.button`
-  padding: 0.5em;
-  font-size: 1em;
-  border-radius: 3px;
-`;
-
-export const Instruction = styled.blockquote`
-  margin: 0;
-  font-size: 0.9em;
-  font-weight: bold;
-  text-align: right;
-`;

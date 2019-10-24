@@ -1,13 +1,6 @@
 import * as React from 'react';
-import {ThemeProvider} from 'styled-components';
 import {ColoredGrid} from '../../LiveEdit';
-import {
-  DEFAULT_BREAKPOINTS,
-  CUSTOM_BREAKPOINTS,
-  Code,
-  CodeBlock,
-  Heading,
-} from '../../utils';
+import {Code, CodeBlock, Heading} from '../../utils';
 
 export default function Introduction() {
   return (
@@ -25,20 +18,16 @@ import Grid from 'styled-components-grid';
 
 <Grid>
   <Grid.Unit size={1/2}>A</Grid.Unit>
-  <Grid.Unit size={{mobile: 1/2, tablet: 1/2, desktop: 1/8}}>B</Grid.Unit>
+  <Grid.Unit size={{mobile: 1/2, tablet: 1/4, desktop: 1/8}}>B</Grid.Unit>
 </Grid>
 `}
       </CodeBlock>
-      <ThemeProvider theme={{breakpoints: DEFAULT_BREAKPOINTS}}>
-        <ColoredGrid>
-          <ColoredGrid.Unit size={1 / 2}>A</ColoredGrid.Unit>
-          <ColoredGrid.Unit
-            size={{mobile: 1 / 2, tablet: 1 / 4, desktop: 1 / 8}}
-          >
-            B
-          </ColoredGrid.Unit>
-        </ColoredGrid>
-      </ThemeProvider>
+      <ColoredGrid>
+        <ColoredGrid.Unit size={1 / 2}>A</ColoredGrid.Unit>
+        <ColoredGrid.Unit size={{mobile: 1 / 2, tablet: 1 / 4, desktop: 1 / 8}}>
+          B
+        </ColoredGrid.Unit>
+      </ColoredGrid>
       <Heading size={3}>Usage with custom breakpoints</Heading>
       You can customise the default breakpoints. If you would like to use the
       same breakpoints as{' '}
@@ -70,14 +59,12 @@ const theme = {
 </ThemeProvider>
 `}
       </CodeBlock>
-      <ThemeProvider theme={{breakpoints: CUSTOM_BREAKPOINTS}}>
-        <ColoredGrid>
-          <ColoredGrid.Unit size={1 / 2}>A</ColoredGrid.Unit>
-          <ColoredGrid.Unit size={{xs: 1 / 2, md: 1 / 4, xl: 1 / 8}}>
-            B
-          </ColoredGrid.Unit>
-        </ColoredGrid>
-      </ThemeProvider>
+      <ColoredGrid>
+        <ColoredGrid.Unit size={1 / 2}>A</ColoredGrid.Unit>
+        <ColoredGrid.Unit size={{xs: 1 / 2, md: 1 / 4, xl: 1 / 8}}>
+          B
+        </ColoredGrid.Unit>
+      </ColoredGrid>
     </div>
   );
 }
