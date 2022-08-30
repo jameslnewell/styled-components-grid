@@ -1,16 +1,25 @@
 {
   "name": "styled-components-grid",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Responsive grid components for `styled-components` 💅.",
-  "keywords": ["react", "styled-components", "grid", "responsive", "style"],
+  "keywords": [
+    "react",
+    "styled-components",
+    "grid",
+    "responsive",
+    "style"
+  ],
   "repository": "jameslnewell/styled-components-grid",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "jsnext:main": "dist/esm/index.js",
-  "files": ["dist/cjs", "dist/esm"],
+  "files": [
+    "dist/cjs",
+    "dist/esm"
+  ],
   "peerDependencies": {
-    "react": ">= 15 < 17",
-    "styled-components": ">= 1 < 5"
+    "react": ">= 15 <= 18",
+    "styled-components": ">= 1 <= 5"
   },
   "dependencies": {
     "react-create-component-from-tag-prop": "^1.4.0",
@@ -43,7 +52,10 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,md}": ["prettier --write", "git add"]
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "license": "MIT"
 }
