@@ -18,7 +18,7 @@
     "dist/esm"
   ],
   "peerDependencies": {
-    "react": ">= 15 <= 17",
+    "react": ">= 15 <= 18",
     "styled-components": ">= 1 <= 5"
   },
   "dependencies": {
