@@ -2,7 +2,7 @@
 
 ### 2.3.0
 
-- Peer depepnency support for v5 of `styled-components`
+- Peer dependency support for v5 of `styled-components`
 
 ### 2.2.2
 
