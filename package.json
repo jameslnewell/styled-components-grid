@@ -9,7 +9,7 @@
   "jsnext:main": "dist/esm/index.js",
   "files": ["dist/cjs", "dist/esm"],
   "peerDependencies": {
-    "react": ">= 15 < 17",
+    "react": ">= 15 < 19",
     "styled-components": ">= 1 < 5"
   },
   "dependencies": {
